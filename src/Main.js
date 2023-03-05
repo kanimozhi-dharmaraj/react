@@ -14,19 +14,22 @@ import Header from './Header';
 //   );
 // }
 
-const Main = () => {
+const Main = (props) => {
         const tasks =[{'name':'Write for Evato tuts','duration':120},
                     {'name':'Work Out','duration':60},
                     {'name':'Procrastinate on Dulingo','duration':240}];
-
-const getDurationData = (data)=>{
+const getDurationList=(data)=>{
     console.log('data',data);
-}   
+    const fillteredData = tasks.filter((task)=>{
+       return  task.duration<data.duration;
+    })
+    console.log(fillteredData);
+}
+
     return (
       <div>
-        {tasks.map((task,index)=>
-        <h1 key={index}>{task.name}</h1>)}
-        <Header tasks={tasks} getDurationData={getDurationData} />
+        
+        <Header tasks={tasks} get={getDurationList}/>
       </div>
       
     );
