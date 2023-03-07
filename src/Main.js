@@ -13,7 +13,6 @@ import Header from './Header';
 //     </div>
 //   );
 // }
-
 const Main = (props) => {
         const tasks =[{'name':'Write for Evato tuts','duration':120},
                     {'name':'Work Out','duration':60},
@@ -24,12 +23,18 @@ const getDurationList=(data)=>{
        return  task.duration<data.duration;
     })
     console.log(fillteredData);
+    // fillteredData.map(()=>{
+    //     var divEle =document.getElementById('detail');
+    //     var h2Ele = document.createElement("h2");
+    //     divEle.append(h2Ele);
+    //     return h2Ele.innerHTML=JSON.stringify(fillteredData);
+    // })
 }
 
     return (
       <div>
-        
         <Header tasks={tasks} get={getDurationList}/>
+        <div id={"detail"}></div>
       </div>
       
     );
