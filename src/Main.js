@@ -34,7 +34,6 @@ const getDurationList=(data)=>{
     return (
       <div>
         <Header tasks={tasks} get={getDurationList}/>
-        <div id={"detail"}></div>
       </div>
       
     );
